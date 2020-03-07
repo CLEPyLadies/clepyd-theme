@@ -12,8 +12,16 @@
     <link rel="icon" href="{{ FAVICON }}" type="image/x-icon">
     {% endif %}
 
+    {% block meta %}
+    <meta name="author" content="{{ AUTHOR }}" />
+    <meta name="description" content="{{ SITEDESCRIPTION }}" />
+    {% endblock %}
+
+    <title>{{ SITENAME }}{% block title %}{% endblock %}</title>
+    <!-- WARNING: extras in block head may override base -->
     {% block head %}
     {% endblock head %}
+
     </head>
     <body>
     {% block content %}

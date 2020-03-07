@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block meta %}
+<meta name="author" content="{{ article.author.name }}" />
+<meta name="description" content="{{ article.summary|striptags|escape }}" />
+<meta name="keywords" content="{{ article.tags|join(', ')|escape }}">
+
+{% endblock meta %}
+
+{% block title %} &ndash; {{ article.title|striptags|escape }}{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link rel='stylesheet' type='text/css' href='/theme/css/index.css'> -->
+{% endblock head %}
+
+
+{% block content %}
+
+<script>console.log('Link loads article.html')</script>
+
+<header>
+    <h1 id="{{ article.slug }}">{{ article.title }}</h1>
+    <p>
+      {% if 'post_stats' in PLUGINS %}
+        &#8226; {{ article.stats['read_mins'] }} min read
+      {% endif %}
+    </p>
+</header>
+
+{% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.article_top %}
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle ads-responsive"
+         data-ad-client="{{ GOOGLE_ADSENSE.ca_id }}"
+         data-ad-slot="{{ GOOGLE_ADSENSE.ads.article_top }}"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+{% endif %}
+
+<div>
+    {{ article.content }}
+</div>
+<div class="tag-cloud">
+    <p>
+      {% if article.tags %}
+      {% for tag in article.tags %}
+      <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+      {% endfor %}
+      {% endif %}
+    </p>
+  </div>
+
+{% endblock content %}
+
+
+
