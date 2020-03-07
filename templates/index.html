@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
+{% block head %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' href='/theme/css/index.css'>
+{% endblock head %}
+
 {% block content %}
     <div class='radial'>
     <span><span></span></span>
@@ -21,17 +26,21 @@
         </a>
     </div>
     </div>
-    <div class='index-articles'>
-    {% for article in articles_page.object_list %}
-        <article>
-        <header>
-            <h2><a href="{{ SITEURL }}/{{ article.url }}{% if not DISABLE_URL_HASH %}#{{ article.slug }}{% endif %}">{{ article.title }}</a></h2>
-        </header>
-        <div>
-            {{ article.content }}
+    <div class='index-articles container'>
+        <div class='row'>
+        {% for article in articles_page.object_list %}
+            <div class='col'>
+                <article>
+                <header>
+                    <h2><a href="{{ SITEURL }}/{{ article.url }}{% if not DISABLE_URL_HASH %}#{{ article.slug }}{% endif %}">{{ article.title }}</a></h2>
+                </header>
+                <div>
+                    {{ article.content }}
+                </div>
+                </article>
+            </div>
+        {% endfor %}
         </div>
-        </article>
-    {% endfor %}
     </div>
 
 {% endblock %}
