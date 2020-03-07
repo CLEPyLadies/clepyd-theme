@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Index loaded</h1>
+    <span><span></span></span>
+    <div class="wrap">
+        <a href="#">
+            <div></div>
+        </a>
+        <a href="#">
+            <div></div>
+        </a>
+        <a href="#">
+            <div></div>
+        </a>
+        <a href="#">
+            <div></div>
+        </a>
+        <a href="#">
+            <div></div>
+        </a>
+    </div>
+
+{% for article in articles_page.object_list %}
+<article>
+Print.
+</article>
+{% endfor %}
+
+{% endblock %}

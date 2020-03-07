@@ -1,7 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-</body>
+<html lang="{{ DEFAULT_LANG }}">
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' type='text/css' href='/theme/static/css/main.css'>
+    {% block head %}
+    {% endblock head %}
+    </head>
+    <body>
+    {% block content %}
+    {% endblock %}
+    </body>
 </html>
