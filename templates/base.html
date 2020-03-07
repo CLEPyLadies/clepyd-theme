@@ -6,6 +6,12 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel='stylesheet' type='text/css' href='/theme/css/main.css'>
+
+    {% if FAVICON %}
+    <link rel="shortcut icon" href="{{ FAVICON }}" type="image/x-icon">
+    <link rel="icon" href="{{ FAVICON }}" type="image/x-icon">
+    {% endif %}
+
     {% block head %}
     {% endblock head %}
     </head>
