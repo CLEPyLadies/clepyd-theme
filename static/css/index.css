@@ -32,7 +32,7 @@ body .radial {
   transition:transform .4s .15s;
 }
 .radial a:nth-child(1) div{
-  background-image:url('/theme/images/AlwaysBeLearning.png');
+  background-image:url('theme-demo/theme/images/AlwaysBeLearning.png');
 }
 .radial a:nth-child(2){
   border-radius:0 40vmin 0 0;
@@ -41,7 +41,7 @@ body .radial {
   transition:transform .4s .2s;
 }
 .radial a:nth-child(2) div{
-  background-image:url('/theme/images/EventsBanner.png');
+  background-image:url('theme-demo/theme/images/EventsBanner.png');
 }
 .radial a:nth-child(3){
   border-radius:0 0 0 40vmin;
@@ -50,7 +50,7 @@ body .radial {
   transition:transform .4s .25s;
 }
 .radial a:nth-child(3) div{
-  background-image:url('/theme/images/cocBanner.png');
+  background-image:url('theme-demo/theme/images/cocBanner.png');
 }
 .radial a:nth-child(4){
   border-radius:0 0 40vmin 0;
@@ -59,7 +59,7 @@ body .radial {
   transition:transform .4s .3s;
 }
 .radial a:nth-child(4) div{
-  background-image: url('/theme/images/MissionValuesBanner.png');
+  background-image: url('theme-demo/theme/images/MissionValuesBanner.png');
 }
 .radial a:nth-child(5){
   width:55%;height:55%;
@@ -69,7 +69,7 @@ body .radial {
   transform:scale(1);
 }
 .radial a:nth-child(5) div{
-  background-image: url('/theme/images/pylady_zany3.png');
+  background-image: url('theme-demo/theme/images/pylady_zany3.png');
 }
 .radial span{
   position:relative;
